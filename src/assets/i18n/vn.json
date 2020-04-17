@@ -1,0 +1,37 @@
+{
+  "title": "Chào mừng bạn đến với trang web của chúng tôi",
+  "block1": "Sinh viên có việc làm",
+  "block2": "Doanh nghiệp đối tác",
+  "block3": "Students & Former Students",
+  "block4": "Sinh viên & Cựu SV",
+  "block5": "Cơ sở",
+  "block6": "Đào tạo toàn quốc",
+  "home":"Trang chủ",
+  "category":"Danh mục trường học",
+  "listschool": "Danh sách trường học",
+  "addschool": " Thêm trường học",
+  "edit":"Sửa",
+  "delete":"Xóa",
+  "school":"Trường học",
+  "save":"Lưu và Hiển thị",
+  "schoolform":"Quản lý trường học",
+  "detailClass": " Chi tiết trường học",
+  "addclass":"Thêm lớp học",
+  "infclass":"Thông tin lớp học",
+  "classform": " Quản lý lớp học",
+  "schoolentity":{
+    "name":"Tên trường học",
+    "address":"Địa chỉ",
+    "Principal":"Hiệu trưởng",
+    "State":"Thành Phố",
+    "image":"Ảnh"
+  },
+  "classentity":{
+    "name":"Tên lớp học",
+    "room":"Phòng",
+    "Total":"Tổng Sinh Viên",
+    "idSchool":"Mã trường",
+    "teacher":"GV Chủ nhiệm"
+  },
+  "language":"Ngôn ngữ"
+}

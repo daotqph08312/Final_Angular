@@ -1,0 +1,45 @@
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800" translate>detailClass</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a href="./" translate>home</a>
+		</li>
+		<li class="breadcrumb-item active" aria-current="page" translate>infclass</li>
+
+	</ol>
+</div>
+<div class="row col-12">
+	<div class="card shadow-sm mb-12">
+		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+			<h6 class="m-0 font-weight-bold text-primary" translate>infclass</h6>
+			<li> <a routerLink="../../addClass" class="btn btn-info" translate>addclass</a></li>
+		</div>
+		<div class="table-responsive ">
+  <table class="table">
+ <thead>
+       <tr>
+      <th scope="col" translate>classentity.name</th>
+      <th scope="col" translate>classentity.room</th>
+     <th scope="col" translate>classentity.Total</th>
+       <th scope="col" translate>classentity.idSchool</th>
+       <th scope="col" translate>classentity.teacher</th>
+       <th scope="col"></th>
+    </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let class of classes">
+      <th scope="row">{{class.name}}</th>
+      <td>{{class.roomNumber}}</td>
+      <td>{{class.totalStudent}}</td>
+      <td>{{nameSchool}}</td>
+      <td>{{class.mainTeacher}}</td>
+      <td> <a [routerLink]="['../../editClass/',schoolID,class.id]" class="btn btn-warning link" translate>edit</a></td>			
+    </tr>
+ 
+ 
+ </tbody>
+  </table>
+</div>
+	</div>
+</div>  
+ 

@@ -1,0 +1,25 @@
+
+ <div id="wrapper">
+ 
+    <!-- Sidebar -->
+    <app-header></app-header>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <app-topbar></app-topbar>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+       <router-outlet></router-outlet>
+      
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <app-footer></app-footer>
+      <!-- Footer -->
+
+    </div>
+  </div>

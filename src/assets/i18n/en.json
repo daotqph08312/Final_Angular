@@ -1,0 +1,37 @@
+{
+  "title": "Welcome to our website",
+  "block1": "Students have a job",
+  "block2": "Partner business",
+  "block3": "Students & Former Students",
+  "block4": "Basis",
+  "block5": "Nationwide training",
+  "block6": "Students have a job",
+  "home": "Home",
+  "category": "Category Schools",
+  "listschool": "List Schools",
+  "addschool": " Create Schools",
+  "edit": "Edit",
+  "delete": "Delete",
+  "school": "School",
+  "save": "Save & show",
+  "schoolform": "Manager Schools",
+  "detailClass": " Detail Schools",
+  "addclass": "Create Class",
+  "infclass": "Information Class",
+  "classform": " Manager Class",
+    "schoolentity":{
+    "name":"Name School",
+    "address":"Address",
+    "Principal":"Principal",
+    "State":"State",
+    "image":"Image"
+  },
+    "classentity":{
+    "name":"Class name",
+    "room":"Room Class",
+    "Total":"Total Student",
+    "idSchool":"Code School",
+    "teacher":"Teacher"
+  },
+  "language":"Language"
+}

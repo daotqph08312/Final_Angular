@@ -1,0 +1,89 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800" translate>schoolform</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a  translate>home</a></li>
+		<li class="breadcrumb-item active" aria-current="page" translate>schoolform</li>
+	</ol>
+</div>
+
+<div class="card shadow-sm mb-4">
+	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+		<h6 class="m-0 font-weight-bold text-primary" translate>schoolform</h6>
+	</div>
+	<form [formGroup]='newSchool'>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-5 col-md-3">
+					<div class="form-group">
+						<label for="" translate >schoolentity.name</label>
+						<input class="form-control" formControlName='name'[ngClass]="{ 'is-invalid': submitted && f.name.errors }" >
+						<div *ngIf="submitted && f.name.errors " class="invalid-feedback">
+							<div *ngIf="f.name.errors.required">Vui lòng nhập tên trường học</div>
+						</div>
+					</div>
+					<div class="form-group">
+					<label for="" translate >schoolentity.image</label>
+						<input class="form-control" formControlName='logo' [ngClass]="{ 'is-invalid': submitted && f.logo.errors }">
+						<div *ngIf="submitted && f.logo.errors " class="invalid-feedback">
+							<div *ngIf="f.logo.errors.required">Vui lòng nhập đường dẫn ảnh của trường học</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" translate >schoolentity.address</label>
+						<input class="form-control" formControlName='address' [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+						<div *ngIf="submitted && f.address.errors " class="invalid-feedback">
+							<div *ngIf="f.address.errors.required">Vui lòng nhập địa chỉ trường học</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-5 col-md-3">
+					<div class="form-group">
+								<label for="" translate >schoolentity.Principal</label>
+						<input class="form-control" formControlName='president' [ngClass]="{ 'is-invalid': submitted && f.president.errors }">
+						<div *ngIf="submitted && f.president.errors " class="invalid-feedback">
+							<div *ngIf="f.president.errors.required">Vui lòng nhập tên Hiệu trưởng trường học</div>
+						</div>
+					</div>
+					<div class="form-group">
+				<label for="" translate >schoolentity.State</label>
+						<input class="form-control" formControlName='province'[ngClass]="{ 'is-invalid': submitted && f.province.errors }">
+						<div *ngIf="submitted && f.province.errors " class="invalid-feedback">
+							<div *ngIf="f.province.errors.required">Vui lòng nhập Thành Phố</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<br>
+
+						<button (click) = 'SaveSchool()' style="margin-top:7px" class="btn btn-info" translate >save</button>
+						<button *ngIf="id != null" type="button" style="margin-top:7px; margin-left:30px" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" translate>delete</button>
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Xác Nhận</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+									</div>
+									<div class="modal-body">
+										<p>Bạn có chắc chắn muốn xóa trường học này?? </p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+										<button type="button" (click)="RemoveSchool(id)" data-dismiss="modal" class="btn btn-danger">Xóa</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="this.image != null" class="col-sm-5 col-md-3">
+					<img style="margin-top:30px; margin-left:20px" class="img-fluid" [src]="this.image">
+                   </div>
+				</div>
+			</div>
+
+	</form>
+</div>

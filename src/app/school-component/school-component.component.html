@@ -1,0 +1,63 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800" translate>listschool</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item">
+			<a translate>home</a>
+		</li>
+		<li class="breadcrumb-item active" aria-current="page" translate>school</li>
+
+	</ol>
+</div>
+<div class="row">
+	<div class="card shadow-sm mb-12">
+		<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+			<h6 class="m-0 font-weight-bold text-primary" translate>listschool</h6>
+			<li> <a routerLink="../addSchool" class="btn btn-info" translate>addschool</a></li>
+		</div>
+		<div class="table-responsive">
+
+			<div class="container">
+
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col"></th>
+							<th scope="col" translate >schoolentity.name </th>
+							<th scope="col" translate >schoolentity.address</th>
+							<th scope="col" translate >schoolentity.Principal</th>
+							<th scope="col" translate >schoolentity.State</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let school of school">
+							<th scope="row"> <a [routerLink]="['../class/',school.id]"
+									><img [src]="school.logo" class="img-thumbnail" width="128" height="128" alt="..."></a></th>
+							<td>{{school.name}} </td>
+							<td> {{school.address}}</td>
+							<td>{{school.president}}</td>
+							<td>{{school.province}}</td>
+
+							<td> <a [routerLink]="['../editSchool',school.id]" translate class="btn btn-warning">edit</a></td>					
+						</tr>
+
+					</tbody>
+					<tfoot class="tfoot-dark">
+							<tr>
+							<th scope="col"></th>
+							<th scope="col" translate >schoolentity.name </th>
+							<th scope="col" translate >schoolentity.address</th>
+							<th scope="col" translate >schoolentity.Principal</th>
+							<th scope="col" translate >schoolentity.State</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

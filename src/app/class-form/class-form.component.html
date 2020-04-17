@@ -1,0 +1,96 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800" translate >classform</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="./" translate >home</a></li>
+		<li class="breadcrumb-item active" aria-current="page" translate >classform</li>
+	</ol>
+</div>
+
+<div class="card shadow-sm mb-4">
+	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+		<h6 class="m-0 font-weight-bold text-primary" translate >classform</h6>
+	</div>
+	<form [formGroup]='newclass'>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-5 col-md-3">
+					<div class="form-group">
+						<label for="" translate >classentity.name</label>
+						<input class="form-control" formControlName='name' [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+						<div *ngIf="submitted && f.name.errors " class="invalid-feedback">
+							<div *ngIf="f.name.errors.required">Vui lòng nhập tên trường học</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" translate >classentity.room</label>
+						<input class="form-control" formControlName='roomNumber' [ngClass]="{ 'is-invalid': submitted && f.roomNumber.errors }">
+						<div *ngIf="submitted && f.roomNumber.errors " class="invalid-feedback">
+							<div *ngIf="f.roomNumber.errors.required">Vui lòng nhập mã số phòng học</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" translate >classentity.Total</label>
+						<input  class="form-control" formControlName='totalStudent'  [ngClass]="{ 'is-invalid': submitted && f.totalStudent.errors }">
+						<div *ngIf="submitted && f.totalStudent.errors " class="invalid-feedback">
+							<div *ngIf="f.totalStudent.errors.required">Vui lòng nhập số sinh viên</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-5 col-md-3">
+					<div class="form-group">
+						<label for="" translate >classentity.teacher</label>
+						<input class="form-control" formControlName='mainTeacher'  [ngClass]="{ 'is-invalid': submitted && f.mainTeacher.errors }" >
+						<div *ngIf="submitted && f.mainTeacher.errors " class="invalid-feedback">
+							<div *ngIf="f.mainTeacher.errors.required">Vui lòng nhập tên Giáo viên chủ nhiệm</div>
+						</div>
+					</div>
+					<div style="margin-top:48px" class="input-group mb-3">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="inputGroupSelect01" translate> classentity.idSchool</label>
+						</div>
+           
+						<select  formControlName='schoolId' class="custom-select" id="inputGroupSelect01" [ngClass]="{ 'is-invalid': submitted && f.schoolId.errors }">
+    <option *ngFor= 'let s of school' [value]='s.id'  >{{s.name}} </option>
+ 
+  </select>
+ 
+<div *ngIf="submitted && f.schoolId.errors" class="invalid-feedback">
+  <div *ngIf="f.schoolId.errors.required">Vui lòng chọn tên Trường Học</div>
+                    </div>
+					</div>
+					<div class="form-group">
+						<br>
+
+						<button (click) = 'SaveClass()' style="margin-top:7px"   class="btn btn-info" translate >save</button>
+						<button *ngIf="idClass != null" type="button" style="margin-top:7px; margin-left:30px" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" translate >delete</button>
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Xác Nhận</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+									</div>
+									<div class="modal-body">
+										<p>Bạn có chắc chắn muốn xóa trường học này?? </p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+										<button type="button" (click)="DeleteClass()" data-dismiss="modal" class="btn btn-danger">Xóa</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf='this.image != null' class="col-sm-5 col-md-3">
+					<img style="margin-top:30px; margin-left:20px" class="img-fluid" [src]="this.image">
+                   </div>
+				</div>
+			</div>
+
+	</form>
+</div>
